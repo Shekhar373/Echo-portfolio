@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
-import Lenis from 'lenis'
-import Home from './pages/Home'
-
+import React, { useEffect } from "react";
+import Lenis from "lenis";
+import Home from "./pages/Home";
 
 const App = () => {
   useEffect(() => {
@@ -11,17 +10,15 @@ const App = () => {
     });
 
     // Listen for the scroll event and log the event data
-    lenis.on('scroll', (e) => {
+    lenis.on("scroll", (e) => {
       // console.log(e);
     });
-  })
+  });
   return (
-    <div className='bg-black text-white'>
-
+    <div className="">
       <Home />
-
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

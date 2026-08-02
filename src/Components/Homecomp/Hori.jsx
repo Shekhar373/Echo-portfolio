@@ -39,26 +39,23 @@ const Hori = () => {
 
   return (
     <>
-      <div className='h-auto lg:h-[30vh] w-full bg-black'></div>
-      <div className=' hori-parent h-auto lg:h-screen  lg:w-[330vw] max-sm:w-[500vw]  flex flex-col bg-black'>
+      <div className='h-auto lg:h-[30vh] w-full bg-black text-white'></div>
+      <div className=' hori-parent h-auto lg:h-screen bg-black text-white lg:w-[330vw] max-sm:w-[500vw]  flex flex-col'>
         <h1 className='lg:text-7xl max-sm:text-[7vw] font-bold px-10 pt-28'>
           LATEST PROJECT
         </h1>
         <div className='flex flex-col lg:flex-row'>
           {workimg.map((workimg, index) => {
             return <div
-              key={index} className='hori-img flex flex-col items-center' >
+              key={index} className='hori-img flex flex-col items-center ' >
               <img className='h-[65vh] lg:w-[60vw] w-[90vw] object-cover px-10 pt-12'
                 src={workimg} alt="" />
             </div>
           })}
         </div>
       </div>
-
     </>
-
   )
-
 }
 
 export default Hori

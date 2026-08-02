@@ -6,26 +6,28 @@ import Hori from '../Components/Homecomp/Hori'
 import KnowUs from '../Components/Homecomp/KnowUs'
 import Footer from '../Components/Homecomp/Footer'
 import Services from '../Components/Homecomp/Services'
+import Servicehome from '../Components/Homecomp/Servicehome'
 import About from '../Components/Homecomp/About'
 import Loader from '../Components/Homecomp/Loader'
-
 import Loader3 from '../Components/Homecomp/Loader3'
 import Abouttext from '../Components/Homecomp/Abouttext'
-
+import { Canvas } from '@react-three/fiber'
+import HeroScene from '../Components/r3f/3dHero'
+import HeroParent from '../Components/Homecomp/HeroParent'
+import ImageSphare from '../Components/Homecomp/ImageSphare'
+import FullscreenNav from '../Components/common/FullscreenNav'
 
 const Home = () => {
   return (
-    <div className='bg-black relative overflow-x-hidden'>
-      {/* <Navbar />  */}
-      {/* <Loader /> */}
-      
+    <div className='relative overflow-x-hidden'>
       <Loader3 />
-      <Hero />
+      <FullscreenNav />
+      <HeroParent />
       <Pin />
-      <Hori />
-      <About />
+      {/* <Hori /> */}
+      <ImageSphare />
       <Abouttext />
-      <Services />
+      <Servicehome />
       <KnowUs />
       <Footer />
     </div>

@@ -2,7 +2,7 @@ import gsap from 'gsap';
 import React, { useEffect, useRef } from 'react'
 
 const Loader3 = () => {
-    const words = ["Brands They", "Don't Whisper", "They","Echo"];
+    const words = ["Brands", "Don't Whisper", "They","Echo"];
     const refs = useRef([]);
 
     useEffect(() => {
@@ -10,6 +10,10 @@ const Loader3 = () => {
         gsap.set(refs.current, { opacity: 0, y: 30 });
     
         const tl = gsap.timeline();
+
+        tl.to(".loader",{
+          duration:0.5
+        })
     
         words.forEach((_, i) => {
           // enter
@@ -47,7 +51,7 @@ const Loader3 = () => {
       }, []);
 
     return (
-        <div className='loader fixed z-50 h-screen w-full items-center bg-[#D14836]'>
+        <div className='loader fixed z-50 h-screen w-full items-center text-white bg-[#D14836]'>
             <h1 className="text-[8vw] flex justify-center text-center font-bold">
             {words.map((word, i) => (
                 <span

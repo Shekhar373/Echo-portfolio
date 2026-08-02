@@ -2,36 +2,53 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='h-[70vh] w-full   overflow-hidden'>
-      <div className='h-1/2 w-full flex justify-between px-10'>
-        <div className='h-full  flex flex-col gap-5'>
-          <a href="#">
-            <img className='rounded-full h-[3vw] hover:scale-125 transition-all' src="data:image/png;base64,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" alt="" />
-          </a>
-          <a href="#">
-            <img className='rounded-full h-[3vw] hover:scale-125 transition-all' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5mi4dqfLnKD0Rr8UE1X48R7lYdscls5g-2Q&s" alt="" />            </a>
-          <a href="#">
-            <img className='rounded-full h-[3vw] hover:scale-125 transition-all' src="data:image/png;base64,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" alt="" />            </a>
-          <a href="#">
-            <img className='rounded-full h-[3vw] hover:scale-125 transition-all' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAgVBMVEUAAAD////39/fAwMCioqKXl5fKysqmpqb09PS3t7eJiYn8/PyPj4/n5+cHBweFhYUjIyMQEBCTk5MwMDB+fn5iYmJbW1vt7e12dnZhYWFnZ2dBQUGxsbGrq6vR0dFNTU0bGxvd3d0pKSkXFxc0NDRJSUl4eHhvb28+Pj5UVFTX19dLL/UpAAAGiUlEQVR4nO2d6WKiMBCAEw8EEY96H6W127W17/+Ai0W7CoEZZWZzbL6/C3a+DeSYHAgJkaS9wWY7ngyFSQwn4+1m0EsTMH5R+69htJrqdgF4W0Xhw4bRWnf4SNbRI4ZJX3fcd9GvfFwrDJOV7pDvZlXhqDSMR7rDfYhRjDWMdIf6MKr3sWwYLnTH2YBFuV4tGQZmtXt3E0CGXd0RNqZbbzjTHR8BszrDue7oSJhXG77ojo2IlypDN0rwxFxt6MI7eGGmMrS/Fr2mWzYMdMdETFA0DHVHRE5YMLS5q6ZmcWtob2e7mujaMNYdDQvxlaGd40GI0V/DRHcsTCQ/hvalLHCsLoauFmFeiCdDu7Jq99A/G+qOg5Hc0MW28EL0bWhLZvsR1idD93qk14SZocsPqRDtzNDVxjDnkBmaPn3WjKkU7jb3OYlIdYfATCp6ukNgpicGukNgZiA2d13/+dHZRe1o1/l4Z4qImo3Y4i+et5dXmdZkZ0WKfCvG2Ev75am55IMzNhrGYoK78KieJU9fWcMjYCJwE6JPSr+MlulpSOSEb916FQueVJhdjaATyeSZVC7j+HlQX3UH2JRpbQlmWN/xK61uKHFfr8E4foOCcq87xmbU1aMX7ugYGQhCUFo9QHmB/Sx/TCt7Mzege7cGgnkNpfytO8wGpChDm7tue5ShzZM7OEObcyFfKMOD7jAbUD+uuHDUHWYDBijDN91hNgDRLbV9nryFMNzpDrIRmBfRirxiJVvXH9LTJCOE7YuL32qzNNKFpamHekH7M1FCPNca2j3AP1MzhIodSJeeKG61+WHpRAmeqJiZcWqpimJ2LbB5aK/i46Zl3Hc/dQfEwfus+xxFu07fkfrF4/F4PB6Px+NRMjyuulEQpF9fadDujTa2LPLEMVzsklL+OUy77NnYURsiKKYTxwF8T3Fseaw+0WoZ8c78IJLexT2o7/Athc1IB+BYsiXnDGV9pk1pCC4Uk7dp5AV87JoM+Y5EYDK8WioGZ9W/WXKtFmAy/An3WH+i3DUpckWzWYZ9tF9GyDJFwmR43lFWmYmt4Mkew/ywmN6dgiyzsZyGnbsFObLQTIane2bwZQrIS5HJsJ/Vog8J0r+LTIYDMcE3EwWIl10zGT4hFwWqIJ6UfcDwDRHl4LGXMOfLBsMdZqFOJaQHkyEMi4svMYbNaFEeYMlUhg2hbDKMLEMpCfMbhhoSdm0MNZR0b6Kphh3nDZdkhogBjhZDuoN1jDVsO2/YssiwFfTzxPbnLFrCl1+gStqwGy5nNym0DSJ5mvNsiWF5PIvbL0e3KZDXcKna2HeEliWfscGwohgW8J0niNqLBwzHDQWxW3WIpjIYDWvq+z3mfqIWkdGwprpH5eGIqho+w9oB0B7xAyHN+ILNsD4TgUpU0Rw2x2ZYX0+8YloMmil+NkPg72J2r9LMmSIMi5PsKEMoDYGZtaGZ3ecyhJrrNeI3aI6rYHpKwbEPpmNE0/dmKkN40yJiHEWTcGMyhPsje4of4TJE1PRw0hpRmWozxLRlcCWBWGZDs7lTmyFiuZnRhnBCF9EgekPDDRGLiWgMEf+V3tAbekMDDRHrLLyh2Ya/nDMsTj14Q8MMEX/IG3pDb+gNvSG94cQbWmdYnEX6DwwR+wy84T80RKzf8Ybe0Bt6w4YgFmD9f4ZDb+gNvaE3vA/EoQfe0BvaZyjcN0Qs2PKGZhmWovWG3vDfGo68oTf0ht6Q3RCxPccbekNv2MgQ3sFnt+FQwKdJ2m04EfBXYO02HAv4Wz8Iw9LeCXMMtwI+vs5uw42A9yjabTgQ8OYcuw17IgWvOcQtgLgUbQLdorinxBP8h+G9a6mw/euMEIkg2tJuKlMpLicWO8ohM3Tq43Alosww1B0EK63MkO7YMwNZy5Ohy49p9G1IddqSicjcsHgigjv0z4buNvrJ2dDZJnElL4auFmLyY1g66dgN8lR2bhjrDoaF+MrQyTbx/CHqs6F079uwl4MJL4ZEJ58ZRFgwdOAj97cEsmhIdcqiIXRlXDKk/dyAZq6yZ1eGZMfy6mcu1YZEZ/Tp50VWGTpSinNZbejEu1jIYBcMHahRi5nyoqEMLG/6g6JQyVCGNnfgFuWlu2VDm7vhkcJGZShjOzM3I+XJRkrDbNRvX2JjVXEcf4Vh5mhXOfYrPzdQaZgR2ZINX6veP4yhlK32wfTJt+mq+kvJCMMTSdobbLbjiVnt5HAy3m4GvRT+FsYfUPtzTpf94acAAAAASUVORK5CYII=" alt="" />            </a>
-
-        </div>
-        <div className='h-full text-2xl flex flex-col gap-5 pt-10'>
-          <a href="#" className='border-animate inline-block'>mail@gmail.com</a>
-          <a href="#" className='border-animate inline-block'>91+ 88888 44444</a>
-        </div>
-        <div className='h-full text-2xl pt-10'>
-          <h1 className='border-animate inline-block'>Home</h1><br />
-          <h1 className='border-animate inline-block'>About me</h1><br />
-          <h1 className='border-animate inline-block'>Work</h1><br />
-          <h1 className='border-animate inline-block'>Services</h1><br />
-
-        </div>
-
-
+    <div className="lg:h-[120vh] bg-black text-white w-full relative z-10 p-5 overflow-hidden flex flex-col">
+      {/* Title */}
+      <div className="h-[15vh] md:h-[25vh] w-full flex items-center">
+        <h1 className="text-[7vw] md:text-[4vw] font-extralight border-animate w-fit cursor-pointer">
+          LET'S WORK TOGETHER
+        </h1>
       </div>
-      <div className='h-1/2 w-full  text-center'>
-        <h1 className='footer-text font-bold text-[19vw] leading-[13vw]'>TANMAY</h1>
+
+      {/* Grids: Stacking on mobile, flex on large screens */}
+      <div className="flex flex-col md:flex-row w-full flex-1 md:justify-between items-start md:items-end gap-8 md:gap-0 ">
+        {/* Left side: Navigation Links */}
+        <div className="w-full md:w-auto flex flex-col gap-4 md:gap-5 text-3xl sm:text-4xl md:text-5xl font-extralight">
+          <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer">HOME</h1>
+          <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer">WORK</h1>
+          <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer">SERVICES</h1>
+          <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer">ABOUT ME</h1>
+        </div>
+
+        {/* Middle: Contact */}
+        <div className="w-full md:w-auto flex flex-col gap-7 md:gap-35 text-base sm:text-lg md:text-xl font-extralight">
+          <div className="flex flex-col gap-2">
+            <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer break-all">
+              XYZ@GMAIL.COM
+            </h1>
+            <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer">
+              QUICK CHAT
+            </h1>
+            <h1 className="opacity-65">TIME</h1>
+          </div>
+          <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer hidden md:block">
+            BACK TO TOP
+          </h1>
+        </div>
+
+        {/* Right: Socials */}
+        <div className="w-full md:w-auto flex flex-row md:flex-col gap-5 md:gap-2 text-base sm:text-lg md:text-xl">
+          <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer">
+            INSTAGRAM
+          </h1>
+          <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer">
+            LINKEDIN
+          </h1>
+          {/* Show BACK TO TOP on mobile at the end of socials */}
+          <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer md:hidden mt-4">
+            BACK TO TOP
+          </h1>
+        </div>
       </div>
     </div>
   )

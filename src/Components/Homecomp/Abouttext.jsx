@@ -1,63 +1,59 @@
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
-import { ScrollTrigger, SplitText } from 'gsap/all'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger, SplitText } from "gsap/all";
+import { useGSAP } from "@gsap/react";
+// Check if you have SplitText from gsap. If you use gsap-bonus-plugins, import like below:
+// import { SplitText } from 'gsap/SplitText'
+// If not, you can alternatively wrap each letter/word in spans yourself for splitting
 
-const Abouttext = () => {
+const AboutText = () => {
+  const textRef = useRef(null);
+
+  useGSAP(() => {
+
     gsap.registerPlugin(ScrollTrigger, SplitText)
-    const aboutimg = useRef(null)
 
-    useGSAP(() => {
-        const split = SplitText.create(".about-text h1", {
-            type: "lines",
-            mask: "lines",
-            autoSplit: true,
-            onSplit: ((split) => {
-                return gsap.from(split.lines, {
 
-                    opacity: 0,
-                    yPercent: 120,
-                    ease: "power",
-                    stagger: {
-                        amount: 0.1
-                    },
-                    scrollTrigger: {
-                        trigger: ".about-text-parent",
-                        // markers: true,
-                        start: "top 20%",
-                        toggleActions: "play none none reverse"
-                    }
-                })
-            }),
-            onComplete: () => split.revert()
-        })
-        gsap.from(aboutimg.current,{
-            clipPath: "inset(0 0 100% 0)",
-            duration: 0.6,
-            ease: "expo.inOut",
-            scrollTrigger: {
-                trigger: ".about-text-parent",
-                // markers: true,
-                start: "top 20%",
-                toggleActions: "play none none reverse"
-            }
-        })
-    })
-    return (
-        <div className='about-text-parent h-screen w-full  flex'>
-            <div className='h-full w-[25vw]  pt-10 pl-10 flex flex-col gap-30'>
-                <img ref={aboutimg} className='h-[30vh] w-[20vw] object-cover' src="https://images.unsplash.com/photo-1770106678115-ec9aa241cdf6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMnx8fGVufDB8fHx8fA%3D%3D" alt="" />
-                <div className='about-text'>
-                    <h1 className=' text-2xl'>Echo is a digital <br /> product conpany</h1>
-                </div>            </div>
-            <div className='about-text h-full w-[75vw] flex flex-col gap-10 pt-10 pl-5'>
-                <h1>About Us</h1>
-                <h1 className='text-[5vw] leading-[5vw]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus error sapiente incidunt placeat natus ad vitae impedit magnam autem cumque.</h1>
-                <h1>Lorem ipsum dolor, sit amet consectetur </h1>
-                <h1 className='w-1/2 leading-[1.5vw]'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam corporis maiores tempore consectetur quo dignissimos quidem natus quisquam odit explicabo quas facilis odio, laboriosam quia adipisci numquam cumque ipsam commodi.</h1>
-            </div>
-        </div>
-    )
-}
+    let split = SplitText.create(textRef.current, {
+      type: "lines",
+      mask: "lines",
+      autoSplit: true,
+      onSplit: (split) => {
+        return gsap.from(split.lines, {
+          opacity: 0,
+          yPercent: 120,
+          ease: "power1.out",
+          stagger: {
+            amount: 0.8,
+          },
 
-export default Abouttext
+          scrollTrigger: {
+            trigger: textRef.current,
+            // markers: true,
+            start: "top 50%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      },
+      onComplete: () => split.revert(),
+    });
+  });
+
+  return (
+    <div className="w-full flex flex-col items-center justify-center min-h-[60vh] p-10 pr-[30vw] bg-white">
+      <h2
+        ref={textRef}
+        className="text-4xl"
+      >
+        Every brand has a story worth telling. My role is to translate that
+        story into visuals that inspire, engage, and build trust. With a focus
+        on branding, visual identity, digital design, and creative direction, I
+        design experiences that not only look exceptional but also communicate
+        with purpose. I believe great design is where creativity meets strategy,
+        creating lasting connections between brands and their audience.
+      </h2>
+    </div>
+  );
+};
+
+export default AboutText;

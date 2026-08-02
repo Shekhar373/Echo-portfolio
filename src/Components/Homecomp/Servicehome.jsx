@@ -1,65 +1,90 @@
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/all'
-import React, { useEffect } from 'react'
+import gsap from "gsap";
+import React, { useRef } from "react";
 
 const Servicehome = () => {
+  const imageRefs = useRef([]);
 
-  gsap.registerPlugin(ScrollTrigger)
-
-  const servicearr = [
+  // Service items
+  const services = [
     {
-      number: "01",
-      name: "BRAND"
+      heading: "BRAND IDENTITY",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta quos quibusdam ",
     },
     {
-      number: "02",
-      name: "STRATERGY"
+      heading: "VIDEO EDITING",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta quos quibusdam ",
     },
     {
-      number: "03",
-      name: "EXPERIENCES"
+      heading: "SOCIAL MEDIA CREATIVE",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta quos quibusdam ",
     },
     {
-      number: "04",
-      name: "SOCIAL"
+      heading: "SOCIAL MEDIA STRATERGY",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta quos quibusdam ",
     },
     {
-      number: "05",
-      name: "PRODUCTION"
-    }
+      heading: "SOCIAL MEDIA STRATERGY",
+      description:
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta quos quibusdam ",
+    },
+  ];
 
-  ]
-
-  useEffect(() => {
-    gsap.utils.toArray(".service-line").forEach(serviceline => {
-      gsap.from(serviceline, {
-        rotateX: 90,
-        scrollTrigger: {
-          trigger: serviceline,
-          // markers: true,
-          start: "top 70%",
-          end: "top 50%",
-          scrub: 1
-
-        }
-      })
-    })
-  })
+  // Ensure the refs array matches the services array
+  imageRefs.current = services.map(
+    (_, i) => imageRefs.current[i] || React.createRef(),
+  );
 
   return (
-    <div className=' min-h-[90vh] w-full '>
-      {servicearr.map((servicearr, index) => {
-        return <div key={index} className=' service-line lg:h-[30vh] sm:h-[20vh] p-10 w-screen bg-black border-b overflow-hidden hover:bg-[#1A1A1A] transition-all items-center text-white lg:flex gap-5'>
-          <h1 className=' text-2xl pb-10 '>{servicearr.number}</h1>
-          <h1 className='lg:text-7xl max-sm:text-5xl  font-extrabold'>{servicearr.name}</h1>
-        </div>
-      })}
-      <div className='lg:h-[40vh] max-sm:h-[20vh] w-full flex justify-center'>
-        <button className='text-xl bg-white text-black font-bold h-fit mt-24 py-3 px-5 rounded-4xl border'>EXPLORE SERVICES</button>
-      </div>
+    <>
+    <div className="h-fit w-full p-5 pt-[30vh]">
+        <h1 className="text-[12vw] lg:text-[8vw]">SERVICES</h1>
     </div>
-  )
-}
+      <div className="lg:h-[120vh] w-full flex flex-col justify-center pt-[10vh]">
+        {services.map((service, idx) => (
+          <div
+            key={idx}
+            onMouseEnter={() =>
+              gsap.to(imageRefs.current[idx].current, {
+                clipPath: "inset(0% 0% 0% 0%)",
+                duration: 0.8,
+                ease: "power4.out",
+              })
+            }
+            onMouseLeave={() =>
+              gsap.to(imageRefs.current[idx].current, {
+                clipPath: "inset(100% 0% 0% 0%)",
+                duration: 0.8,
+                ease: "power4.out",
+              })
+            }
+            className="h-fit lg:h-[25vh] w-full flex flex-col max-md:gap-3 lg:flex-row p-5 relative"
+          >
+            <div
+              ref={imageRefs.current[idx]}
+              className="absolute inset-0 overflow-hidden"
+              style={{ clipPath: "inset(100% 0 0 0)" }}
+            >
+              <img
+                src="https://i.pinimg.com/1200x/d3/e6/3f/d3e63f10189138a30544c2e2d923b338.jpg"
+                className="h-full w-full object-cover"
+                alt=""
+              />
+            </div>
+            <div className="h-full w-full lg:w-3/4 text-[6vw] lg:text-[3vw] font-light flex">
+              <h1 className="mix-blend-difference">{service.heading}</h1>
+            </div>
+            <div className="h-full w-full lg:w-1/4 max-md:text-xs font-medium flex items-center">
+              <h1 className="mix-blend-difference">{service.description}</h1>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
 
-export default Servicehome
+export default Servicehome;
