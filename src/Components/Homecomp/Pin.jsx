@@ -11,11 +11,10 @@ const Pin = () => {
         let split = SplitText.create(".pin-color h1", {
             type: "chars",
             musk: "lines",
-        })
+        });
 
         gsap.from(split.chars, {
             y: 150,
-
             stagger: {
                 amount: 0.5,
                 from: "random",
@@ -28,33 +27,35 @@ const Pin = () => {
                 end: "bottom 100%",
                 scrub: 1
             }
-        })
+        });
 
-        gsap.to(mainvideo.current, {
-            scaleX: 0.25,
-            scaleY: 0.25,
-            y: "90vh",
-            x: "35vw",
-
-            scrollTrigger: {
-                trigger: ".pin-main",
-                // marker:true,
-                start: "top 0",
-                end: "top -100%",
-                scrub: 3
-            }
-        })
-    })
+        // Only apply video animation for screens 768px and above (not on mobile)
+        gsap.matchMedia().add("(min-width: 768px)", () => {
+            gsap.to(mainvideo.current, {
+                scaleX: 0.25,
+                scaleY: 0.25,
+                y: "90vh",
+                x: "35vw",
+                scrollTrigger: {
+                    trigger: ".pin-main",
+                    // marker:true,
+                    start: "top 0",
+                    end: "top -100%",
+                    scrub: 3
+                }
+            });
+        });
+    });
 
 
 
     return (
 
-        <div className='pin-main h-[230vh] bg-black text-white w-full relative '>
+        <div className='pin-main h-[120vh] lg:h-[230vh] bg-black text-white w-full relative '>
             <div className='absolute z-30 w-full flex justify-center items-center'>
-                <video ref={mainvideo} className='h-screen w-screen object-cover' autoPlay loop muted src="https://wethinkelastic.com/assets/videos/video-start.mp4#t=0.1"></video>
+                <video ref={mainvideo} className='h-[50vh] lg:h-screen w-screen object-cover' autoPlay loop muted src="https://wethinkelastic.com/assets/videos/video-start.mp4#t=0.1"></video>
             </div>
-            <div className='pin-color h-screen w-full relative top-[120vh]'>
+            <div className='pin-color h-[50vh] lg:h-screen w-full relative top-[60vh] lg:top-[120vh]'>
 
                 <div className='pin-color-text text-[10vw] inline-block font-bold leading-[9vw] pt-16 p-10 '>
                     <h1 className='overflow-clip'>A NETWORK </h1>

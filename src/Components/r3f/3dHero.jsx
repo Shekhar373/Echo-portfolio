@@ -93,11 +93,11 @@ function HeroScene() {
             opacity: textureDOM ? 0 : 1,
           }}
         >
-          <p className="h-screen px-10 flex flex-col text-[16vw] leading-[12vw] font-bold">
+          <p className="h-screen max-md:pt-[60vh] px-10 flex flex-col text-[20vw] lg:text-[16vw] leading-[16vw] lg:leading-[12vw] font-bold">
+            INNOVATE <br />
             DESIGN <br />
-            MEET <br />
-            CODE <br />
-            HERE <br />
+            INSPIRE <br />
+            REPEAT <br />
           </p>
         </div>
       </Html>

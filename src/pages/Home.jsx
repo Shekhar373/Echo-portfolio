@@ -2,7 +2,6 @@ import React from 'react'
 import Navbar from '../Components/common/Navbar'
 import Hero from '../Components/Homecomp/Hero'
 import Pin from '../Components/Homecomp/Pin'
-import Hori from '../Components/Homecomp/Hori'
 import KnowUs from '../Components/Homecomp/KnowUs'
 import Footer from '../Components/Homecomp/Footer'
 import Services from '../Components/Homecomp/Services'
@@ -20,7 +19,7 @@ import FullscreenNav from '../Components/common/FullscreenNav'
 const Home = () => {
   return (
     <div className='relative overflow-x-hidden'>
-      <Loader3 />
+      {/* <Loader3 /> */}
       <FullscreenNav />
       <HeroParent />
       <Pin />

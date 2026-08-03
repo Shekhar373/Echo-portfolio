@@ -40,7 +40,7 @@ const Servicehome = () => {
 
   return (
     <>
-    <div className="h-fit w-full p-5 pt-[30vh]">
+    <div className="h-fit w-full p-5 lg:pt-[30vh]">
         <h1 className="text-[12vw] lg:text-[8vw]">SERVICES</h1>
     </div>
       <div className="lg:h-[120vh] w-full flex flex-col justify-center pt-[10vh]">
@@ -61,7 +61,7 @@ const Servicehome = () => {
                 ease: "power4.out",
               })
             }
-            className="h-fit lg:h-[25vh] w-full flex flex-col max-md:gap-3 lg:flex-row p-5 relative"
+            className="h-fit lg:h-[25vh] w-full flex flex-col max-md:gap-5 lg:flex-row p-5 relative"
           >
             <div
               ref={imageRefs.current[idx]}
@@ -74,10 +74,10 @@ const Servicehome = () => {
                 alt=""
               />
             </div>
-            <div className="h-full w-full lg:w-3/4 text-[6vw] lg:text-[3vw] font-light flex">
+            <div className="h-full w-full lg:w-3/4 text-[5vw] lg:text-[3vw] relative z-10 font-light flex">
               <h1 className="mix-blend-difference">{service.heading}</h1>
             </div>
-            <div className="h-full w-full lg:w-1/4 max-md:text-xs font-medium flex items-center">
+            <div className="h-full w-full lg:w-1/4 max-md:text-xs font-medium relative z-10 flex items-center">
               <h1 className="mix-blend-difference">{service.description}</h1>
             </div>
           </div>

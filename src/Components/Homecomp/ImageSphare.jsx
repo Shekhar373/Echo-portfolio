@@ -9,26 +9,27 @@ import { ScrollTrigger } from "gsap/all";
 const ImageSphare = () => {
   const colorRef = useRef(null)
 
-  useGSAP(()=>{
-    gsap.registerPlugin(ScrollTrigger)
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
 
-
-    gsap.to(colorRef.current,{
-      backgroundColor:"white",
-      scrollTrigger:{
-        trigger:colorRef.current,
-        // markers:true,
-        start: "top top",
-        end:"top -10%",
-        scrub:2
-      }
-    })
-  })
+    gsap.matchMedia().add("(min-width: 768px)", () => {
+      gsap.to(colorRef.current, {
+        backgroundColor: "white",
+        scrollTrigger: {
+          trigger: colorRef.current,
+          // markers:true,
+          start: "top top",
+          end: "top -10%",
+          scrub: 2,
+        },
+      });
+    });
+  });
 
 
   return (
-    <div ref={colorRef} className="h-[200vh]  bg-black">
-      <div className="pt-[70vh] p-10">
+    <div ref={colorRef} className="h-screen lg:h-[200vh] lg:bg-black">
+      <div className=" lg:pt-[70vh] p-10">
         <h1 className="text-[12vw] lg:text-[8vw]">PROJECTS</h1>
       </div>
         <div className="h-screen w-full">
