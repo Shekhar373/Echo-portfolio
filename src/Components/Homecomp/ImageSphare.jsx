@@ -29,7 +29,7 @@ const ImageSphare = () => {
 
   return (
     <div ref={colorRef} className="h-screen lg:h-[200vh] lg:bg-black">
-      <div className=" lg:pt-[70vh] p-10">
+      <div className=" lg:pt-[70vh] p-5 lg:p-10">
         <h1 className="text-[12vw] lg:text-[8vw]">PROJECTS</h1>
       </div>
         <div className="h-screen w-full">

@@ -43,7 +43,7 @@ const AboutText = () => {
     <div className="h-[60vh] lg:h-screen w-full flex items-center justify-center p-5 lg:p-10 lg:pr-[30vw] bg-white">
       <h2
         ref={textRef}
-        className="text-2xl lg:text-4xl"
+        className="text-xl lg:text-4xl"
       >
         Every brand has a story worth telling. My role is to translate that
         story into visuals that inspire, engage, and build trust. With a focus
