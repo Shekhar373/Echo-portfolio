@@ -1,57 +1,65 @@
-import React from 'react'
+import React from "react";
+
+const mixedTextClass = "text-white mix-blend-difference";
 
 const Footer = () => {
   return (
-    <div className="lg:h-[120vh] bg-black text-white w-full relative z-10 p-5 overflow-hidden flex flex-col">
-      {/* Title */}
-      <div className="h-[15vh] md:h-[25vh] w-full flex items-center">
-        <h1 className="text-[7vw] md:text-[4vw] font-extralight border-animate w-fit cursor-pointer">
-          LET'S WORK TOGETHER
-        </h1>
-      </div>
+    <div className="relative flex h-screen w-full">
+      <div className="h-full w-1/2 bg-white" />
+      <div className="h-full w-1/2 bg-black" />
 
-      {/* Grids: Stacking on mobile, flex on large screens */}
-      <div className="flex flex-col md:flex-row w-full flex-1 md:justify-between items-start md:items-end gap-8 md:gap-0 ">
-        {/* Left side: Navigation Links */}
-        <div className="w-full md:w-auto flex flex-col gap-4 md:gap-5 text-3xl sm:text-4xl md:text-5xl font-extralight">
-          <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer">HOME</h1>
-          <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer">WORK</h1>
-          <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer">SERVICES</h1>
-          <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer">ABOUT ME</h1>
+      <div className="absolute top-0 h-full w-full px-10">
+        <div className="text-[10vw]">
+          <h1 className={mixedTextClass}>Let's get in touch</h1>
         </div>
+        <div className="h-[60vh] w-full flex justify-between pt-[20vh]">
+          <div className="flex flex-col gap-5">
+            <h1 className={`${mixedTextClass} text-2xl`}>Navigate</h1>
 
-        {/* Middle: Contact */}
-        <div className="w-full md:w-auto flex flex-col gap-7 md:gap-35 text-base sm:text-lg md:text-xl font-extralight">
-          <div className="flex flex-col gap-2">
-            <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer break-all">
-              XYZ@GMAIL.COM
-            </h1>
-            <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer">
-              QUICK CHAT
-            </h1>
-            <h1 className="opacity-65">TIME</h1>
+            <div className="text-md font-light">
+              <h1 className={mixedTextClass}>Home</h1>
+              <h1 className={mixedTextClass}>Work</h1>
+              <h1 className={mixedTextClass}>About</h1>
+              <h1 className={mixedTextClass}>Contact</h1>
+            </div>
           </div>
-          <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer hidden md:block">
-            BACK TO TOP
-          </h1>
-        </div>
-
-        {/* Right: Socials */}
-        <div className="w-full md:w-auto flex flex-row md:flex-col gap-5 md:gap-2 text-base sm:text-lg md:text-xl">
-          <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer">
-            INSTAGRAM
-          </h1>
-          <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer">
-            LINKEDIN
-          </h1>
-          {/* Show BACK TO TOP on mobile at the end of socials */}
-          <h1 className="opacity-65 hover:opacity-100 transition-all cursor-pointer md:hidden mt-4">
-            BACK TO TOP
-          </h1>
+          <div className="flex flex-col gap-5">
+            <h1 className={`${mixedTextClass} text-2xl`}>Inquiries</h1>
+            <div className="text-md font-light">
+              <div>
+                <h1 className={mixedTextClass}>Offline</h1>
+                <h1 className={mixedTextClass}>Reach out to echo studio</h1>
+                <h1 className={mixedTextClass}>+91 44444 99999</h1>
+                <h1 className={mixedTextClass}>xyz@gmail.com</h1>
+              </div>
+              <div>
+                <h1 className={mixedTextClass}>Online</h1>
+                <h1 className={mixedTextClass}>Reach out to xyz</h1>
+                <h1 className={mixedTextClass}>+91 44444 99999</h1>
+                <h1 className={mixedTextClass}>xyz@gmail.com</h1>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col gap-5">
+            <h1 className={`${mixedTextClass} text-2xl`}>Work</h1>
+            <div className="text-md font-light">
+              <h1 className={mixedTextClass}>Send us a email</h1>
+              <h1 className={mixedTextClass}>xyz@gmail.com</h1>
+              <h1 className={mixedTextClass}>echo-studio.com</h1>
+            </div>
+          </div>
+          <div className="flex flex-col gap-5">
+            <h1 className={`${mixedTextClass} text-2xl`}>Social</h1>
+            <div className="text-md font-light">
+              <h1 className={mixedTextClass}>Instagram</h1>
+              <h1 className={mixedTextClass}>Linkedin</h1>
+              <h1 className={mixedTextClass}>Twitter</h1>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

@@ -20,7 +20,7 @@ const useDomToCanvas = (domEl) => {
       const canvas = await html2canvas(domEl, { backgroundColor: null });
       setTexture(new THREE.CanvasTexture(canvas));
     };
-
+   
     convertDomToCanvas();
 
     const debouncedResize = debounce(() => {
@@ -93,7 +93,7 @@ function HeroScene() {
             opacity: textureDOM ? 0 : 1,
           }}
         >
-          <p className="h-screen max-md:pt-[60vh] px-10 flex flex-col text-[20vw] lg:text-[16vw] leading-[16vw] lg:leading-[12vw] font-bold">
+          <p className="h-screen max-md:pt-[60vh] px-5 lg:px-10 flex flex-col text-[20vw] lg:text-[16vw] leading-[16vw] lg:leading-[12vw] font-bold">
             INNOVATE <br />
             DESIGN <br />
             INSPIRE <br />
@@ -110,7 +110,7 @@ function HeroScene() {
           fragmentShader={fragmentShader}
           uniforms={uniforms}
           flatShading
-          silent
+          // silent
         />
         <Lights />
       </mesh>

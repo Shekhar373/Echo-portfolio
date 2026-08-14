@@ -27,3 +27,7 @@ body{
     transition: width .3s;
 
 }
+
+/* *, *::before, *::after {
+    cursor: none !important;
+  } */
