@@ -1,60 +1,85 @@
-import React, { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { OrbitControls, useTexture } from "@react-three/drei";
+import { useRef } from "react";
 import * as THREE from "three";
 
-const textures = ["/1.jpg", "/2.jpg", "/3.jpg", "/4.jpg", "/1.jpg"];
+const images = [
+  "/1.jpg", "/2.jpg", "/3.jpg", "/4.jpg", "/1.jpg",
+  "/1.jpg", "/2.jpg", "/3.jpg", "/4.jpg", "/1.jpg",
+  "/1.jpg", "/2.jpg", "/3.jpg", "/4.jpg", "/1.jpg",
+  "/1.jpg", "/2.jpg", "/3.jpg", "/4.jpg", "/1.jpg",
+  "/1.jpg", "/2.jpg", "/3.jpg", "/4.jpg", "/1.jpg",
+  "/1.jpg", "/2.jpg", "/3.jpg", "/4.jpg", "/1.jpg",
+];
 
-const count = textures.length;
-const radius = 10;
-const speed = 0.2;
+// Spherical radius controls y/z, both x and z are modified by stretch values now
+const radius = 6;
+const xStretch = 1.8; // Increase x axis space (1 = normal, >1 = stretched further out)
+const zStretch = 1.6; // Increase z axis space (1 = normal, >1 = stretched further out)
 
-function Sphare() {
-  // Load all textures at once
-  const loadedTextures = useTexture(textures);
+function fibonacciPosition(i, total, radius, xStretch = 1, zStretch = 1) {
+  const y = 1 - (2 * (i + 0.5)) / total;
 
-  // Fix texture settings once
-  useMemo(() => {
-    loadedTextures.forEach((tex) => {
-      if (!tex) return;
-      tex.minFilter = THREE.LinearMipmapLinearFilter;
-      tex.magFilter = THREE.LinearFilter;
-      tex.generateMipmaps = true;
-      tex.colorSpace = THREE.SRGBColorSpace;
-      tex.needsUpdate = true;
-    });
-  }, [loadedTextures]);
+  const r = Math.sqrt(1 - y * y);
 
-  const meshRefs = useRef([]);
+  const theta = i * Math.PI * (3 - Math.sqrt(5));
 
-  // Prepare an array of indices to map over
-  const planes = useMemo(() => Array.from({ length: count }, (_, i) => i), []);
+  // Stretch X and Z axes by multiplying by xStretch and zStretch
+  const x = r * Math.cos(theta) * radius * xStretch;
+  const z = r * Math.sin(theta) * radius * zStretch;
 
-  useFrame(({ clock }) => {
-    const time = clock.getElapsedTime();
+  return [x, y * radius, z];
+}
 
-    meshRefs.current.forEach((mesh, i) => {
-      if (!mesh) return;
-      const angle = (i / count) * Math.PI * 2 + time * speed;
-      mesh.position.x = Math.cos(angle) * radius;
-      mesh.position.z = Math.sin(angle) * radius;
-      mesh.lookAt(0, 0, 0);
+function ImageCard({ src, position }) {
+  const texture = new THREE.TextureLoader().load(src);
+
+  return (
+    <mesh position={position}>
+      <planeGeometry args={[1.2, 1.6]} />
+
+      <meshBasicMaterial
+        map={texture}
+        side={THREE.DoubleSide}
+      />
+    </mesh>
+  );
+}
+
+export default function Sphere() {
+  const group = useRef();
+
+  useFrame((state, delta) => {
+    if (!group.current) return;
+
+    // Slow rotation on Y axis
+    group.current.rotation.y += delta * 0.1;
+
+    // Make each child (image card) always face the camera
+    group.current.children.forEach((child) => {
+      child.lookAt(state.camera.position);
+      // child.lookAt(0, 0, 0);
     });
   });
 
   return (
-    <>
-      {planes.map((i) => (
-        <mesh key={i} ref={(el) => (meshRefs.current[i] = el)}>
-          <planeGeometry args={[6.5, 4, 10, 10]} />
-          <meshBasicMaterial
-            map={loadedTextures[i] ?? null}
-            side={THREE.DoubleSide}
+    <group ref={group}>
+      {images.map((src, i) => {
+        const position = fibonacciPosition(
+          i,
+          images.length,
+          radius,
+          xStretch, // pass in xStretch to function
+          zStretch // now also stretching z axis
+        );
+
+        return (
+          <ImageCard
+            key={i}
+            src={src}
+            position={position}
           />
-        </mesh>
-      ))}
-    </>
+        );
+      })}
+    </group>
   );
 }
-
-export default Sphare;
