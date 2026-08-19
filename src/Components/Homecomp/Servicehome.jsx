@@ -41,7 +41,7 @@ const Servicehome = () => {
   return (
     <>
     <div className="h-fit w-full p-5 lg:pt-[30vh]">
-        <h1 className="text-[12vw] lg:text-[8vw]">SERVICES</h1>
+        <h1 className="text-[12vw] lg:text-[8vw]">Services</h1>
     </div>
       <div className="lg:h-[120vh] w-full flex flex-col justify-center pt-[10vh]">
         {services.map((service, idx) => (

@@ -34,7 +34,7 @@ const Cursor = () => {
     height: "18px",
     borderRadius: "50%",
     pointerEvents: "none",
-    zIndex: 9999,
+    zIndex: 40,
     background:"white",
     mixBlendMode: "difference",
     transform: "translate(-50%, -50%)",

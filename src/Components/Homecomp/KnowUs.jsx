@@ -12,7 +12,7 @@ const KnowUs = () => {
     });
 
     const scrollTween = gsap.to(horiscroll.current, {
-      xPercent: -140,
+      xPercent: -146,
       scrollTrigger: {
         trigger: horiscroll.current,
         // markers: true,

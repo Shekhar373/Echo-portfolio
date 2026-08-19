@@ -40,7 +40,7 @@ const AboutText = () => {
   });
 
   return (
-    <div className="h-[60vh] lg:h-screen w-full flex items-center justify-center p-5 lg:p-10 lg:pr-[30vw] bg-white">
+    <div className="h-[60vh] lg:h-screen w-full flex items-center justify-center p-5 lg:p-10 lg:pr-[30vw]">
       <h2
         ref={textRef}
         className="text-xl lg:text-4xl"
