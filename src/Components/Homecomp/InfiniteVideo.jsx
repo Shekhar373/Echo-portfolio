@@ -202,8 +202,10 @@ const InfiniteVideo = () => {
               className="
                 video-item
                 relative
-                h-[50vh]
-                w-[45vw]
+                h-[25vh]
+                w-[90vw]
+                lg:h-[50vh]
+                lg:w-[45vw]
                 shrink-0
                 overflow-hidden
                 rounded-sm

@@ -1,10 +1,8 @@
 import { useRef, useMemo, useEffect, useState } from "react";
-// import { useControls } from "leva";
 import { debounce } from "lodash";
 
 // 3D
 import * as THREE from "three";
-// import { PointLightHelper } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
 import CustomShaderMaterial from "three-custom-shader-material";

@@ -51,11 +51,11 @@ const Pin = () => {
 
     return (
 
-        <div className='pin-main h-[120vh] lg:h-[260vh] bg-black text-white w-full relative '>
+        <div className='pin-main h-[150vh] lg:h-[260vh] bg-black text-white w-full relative '>
             <div className='absolute z-30 w-full flex justify-center items-center'>
                 <video ref={mainvideo} className='h-[50vh] lg:h-screen w-screen object-cover' autoPlay loop muted src="https://wethinkelastic.com/assets/videos/video-start.mp4#t=0.1"></video>
             </div>
-            <div className='pin-color h-[50vh] lg:h-screen w-full relative top-[60vh] lg:top-[120vh]'>
+            <div className='pin-color h-[80vh] lg:h-screen w-full relative top-[60vh] lg:top-[120vh]'>
 
                 <div className='pin-color-text text-[10vw] inline-block font-bold leading-[9vw] pt-16 p-5 lg:p-10 '>
                     <h1 className='overflow-clip'>A NETWORK </h1>

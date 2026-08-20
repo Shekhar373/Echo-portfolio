@@ -43,7 +43,7 @@ const Servicehome = () => {
     <div className="h-fit w-full p-5 lg:pt-[30vh]">
         <h1 className="text-[12vw] lg:text-[8vw]">Services</h1>
     </div>
-      <div className="lg:h-[120vh] w-full flex flex-col justify-center pt-[10vh]">
+      <div className="lg:h-[120vh] w-full flex flex-col justify-center lg:pt-[10vh]">
         {services.map((service, idx) => (
           <div
             key={idx}
@@ -61,11 +61,12 @@ const Servicehome = () => {
                 ease: "power4.out",
               })
             }
-            className="h-fit lg:h-[25vh] w-full flex flex-col max-md:gap-5 lg:flex-row p-5 relative"
+            className="h-fit lg:h-[25vh] w-full flex flex-col max-md:gap-0 lg:flex-row p-5 relative"
           >
             <div
               ref={imageRefs.current[idx]}
-              className="absolute inset-0 overflow-hidden"
+              className="absolute inset-0 overflow-hidden hidden lg:block"
+         
               style={{ clipPath: "inset(100% 0 0 0)" }}
             >
               <img
@@ -74,10 +75,10 @@ const Servicehome = () => {
                 alt=""
               />
             </div>
-            <div className="h-full w-full lg:w-3/4 text-[5vw] lg:text-[3vw] relative z-10 font-light flex">
+            <div className="h-full w-full lg:w-3/4 text-[6vw] max-md:font-medium lg:text-[3vw] relative z-10 font-light flex">
               <h1 className="">{service.heading}</h1>
             </div>
-            <div className="h-full w-full lg:w-1/4 max-md:text-xs font-medium relative z-10 flex items-center">
+            <div className="h-full w-full lg:w-1/4 max-md:text-sm font-medium relative z-10 flex items-center max-md:border-b max-md:pb-5">
               <h1 className="mix-blend-difference">{service.description}</h1>
             </div>
           </div>
