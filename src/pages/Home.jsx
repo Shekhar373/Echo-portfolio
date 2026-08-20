@@ -10,14 +10,15 @@ import ImageSphare from '../Components/Homecomp/ImageSphare'
 import FullscreenNav from '../Components/common/FullscreenNav'
 import Video from '../Components/Homecomp/Video'
 import Hero from '../Components/Homecomp/Hero'
+import Navbar from '../Components/common/Navbar'
 
 const Home = () => {
   return (
     <div className='relative overflow-x-hidden'>
       {/* <Loader3 /> */}
-      <FullscreenNav />
-      <HeroParent />
-      {/* <Hero /> */}
+      {/* <FullscreenNav /> */}
+      {/* <HeroParent /> */}
+      <Hero />
       <Pin />
       <ImageSphare />
       <Abouttext />

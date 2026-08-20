@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Lenis from "lenis";
 import Home from "./pages/Home";
 import Cursor from "./Components/common/Cursor";
+import Navbar from "./Components/common/Navbar";
 
 const App = () => {
   useEffect(() => {
@@ -14,10 +15,16 @@ const App = () => {
     lenis.on("scroll", (e) => {
       // console.log(e);
     });
-  });
+  }, []);
+
   return (
     <div className="">
+      {/* Make the Navbar fixed */}
+      <div style={{ position: "fixed", top: 0, zIndex: 40 }}>
+        <Navbar />
+      </div>
       <Cursor />
+
       <Home />
     </div>
   );

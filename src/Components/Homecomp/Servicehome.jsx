@@ -26,11 +26,6 @@ const Servicehome = () => {
       description:
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta quos quibusdam ",
     },
-    {
-      heading: "Social Media Strategy",
-      description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta quos quibusdam ",
-    },
   ];
 
   // Ensure the refs array matches the services array
@@ -41,7 +36,7 @@ const Servicehome = () => {
   return (
     <>
     <div className="h-fit w-full p-5 lg:pt-[30vh]">
-        <h1 className="text-[12vw] lg:text-[8vw]">Services</h1>
+        <h1 className="text-[12vw] lg:text-[6vw] tracking-tighter">Services</h1>
     </div>
       <div className="lg:h-[120vh] w-full flex flex-col justify-center lg:pt-[10vh]">
         {services.map((service, idx) => (
@@ -61,7 +56,7 @@ const Servicehome = () => {
                 ease: "power4.out",
               })
             }
-            className="h-fit lg:h-[25vh] w-full flex flex-col max-md:gap-0 lg:flex-row p-5 relative border-b"
+            className="h-fit lg:h-[25vh] w-full flex flex-col max-md:gap-0 lg:flex-row p-5 relative lg:border-b"
           >
             <div
               ref={imageRefs.current[idx]}

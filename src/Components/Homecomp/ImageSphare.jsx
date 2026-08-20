@@ -46,7 +46,7 @@ const ImageSphare = () => {
   return (
     <div ref={colorRef} className="h-fit lg:h-[170vh] flex flex-col max-md:gap-10">
       <div className=" lg:pt-[40vh] p-5 lg:p-10">
-        <h1 className="text-[12vw] lg:text-[8vw]">Projects</h1>
+        <h1 className="text-[12vw] lg:text-[6vw] tracking-tighter">Projects</h1>
       </div>
       <div className="h-[50vh] lg:h-screen w-full">
       <Canvas camera={{ position: [0, 0, 15], fov: 50 }}>
