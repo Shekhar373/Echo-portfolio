@@ -13,7 +13,7 @@ import Video from '../Components/Homecomp/Video'
 const Home = () => {
   return (
     <div className='relative overflow-x-hidden'>
-      <Loader3 />
+      {/* <Loader3 /> */}
       <FullscreenNav />
       <HeroParent />
       <Pin />
