@@ -9,49 +9,56 @@ import { useGSAP } from "@gsap/react";
 const AboutText = () => {
   const textRef = useRef(null);
 
-  useGSAP(() => {
+  // useGSAP(() => {
+  //   gsap.registerPlugin(ScrollTrigger, SplitText);
 
-    gsap.registerPlugin(ScrollTrigger, SplitText)
+  //   // Split lines for both animation and revert
+  //   let split = SplitText.create(textRef.current, {
+  //     type: "lines",
+  //     linesClass: "split-line",
+  //     // Don't use mask & autoSplit & onSplit like in original; just handle animation below
+  //   });
 
+  //   gsap.from(split.lines, {
+  //     opacity: 0,
+  //     yPercent: 120,
+  //     ease: "power1.out",
+  //     stagger: {
+  //       amount: 0.8,
+  //     },
+  //     scrollTrigger: {
+  //       trigger: textRef.current,
+  //       // markers: true,
+  //       start: "top 50%",
+  //       toggleActions: "play none none reverse",
+  //     },
+  //   });
 
-    let split = SplitText.create(textRef.current, {
-      type: "lines",
-      mask: "lines",
-      autoSplit: true,
-      onSplit: (split) => {
-        return gsap.from(split.lines, {
-          opacity: 0,
-          yPercent: 120,
-          ease: "power1.out",
-          stagger: {
-            amount: 0.8,
-          },
-
-          scrollTrigger: {
-            trigger: textRef.current,
-            // markers: true,
-            start: "top 50%",
-            toggleActions: "play none none reverse",
-          },
-        });
-      },
-      onComplete: () => split.revert(),
-    });
-  });
+  //   // Clean up on unmount
+  //   return () => {
+  //     split && split.revert();
+  //     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  //   };
+  // });
 
   return (
-    <div className="h-[60vh] lg:h-screen w-full flex items-center justify-center p-5 lg:p-10 lg:pr-[30vw]">
-      <h2
-        ref={textRef}
-        className="text-xl lg:text-4xl"
-      >
-        Every brand has a story worth telling. My role is to translate that
-        story into visuals that inspire, engage, and build trust. With a focus
-        on branding, visual identity, digital design, and creative direction, I
-        design experiences that not only look exceptional but also communicate
-        with purpose. I believe great design is where creativity meets strategy,
-        creating lasting connections between brands and their audience.
-      </h2>
+    <div
+      className="h-[80vh] w-full flex flex-col justify-center p-5 lg:p-10 lg:mt-[20vh]"
+    >
+      <div className="border-b pb-[10vh] lg:pb-[20vh] flex flex-col max-md:gap-10">
+      <h1 className="text-[9vw] leading-[9vw] lg:text-[5vw] lg:leading-[5vw] tracking-tighter">
+        I create visuals that <br /> communicate and<br /> <span className="text-zinc-400">inspire.</span>
+      </h1>
+
+      <h1 className="text-xl lg:pl-[60vw]">
+        I'm a Video Editor and Graphic Designer focused on creating engaging
+        visual experiences. I combine storytelling, motion, design, and
+        creativity to turn ideas into content that captures attention and leaves
+        an impact.
+      </h1>
+      </div>
+      <h1 className="max-md:pt-5">LET'S WORK TOGETHER
+      </h1>
     </div>
   );
 };

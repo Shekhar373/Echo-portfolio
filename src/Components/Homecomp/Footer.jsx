@@ -28,13 +28,13 @@ const Footer = () => {
             <h1 className={`${mixedTextClass} text-2xl`}>Inquiries</h1>
             <div className="text-sm lg:text-md font-light">
               <div>
-                <h1 className={mixedTextClass}>Offline</h1>
+                <h1 className={`${mixedTextClass} font-medium text-md`}>Offline</h1>
                 <h1 className={mixedTextClass}>Reach out to echo studio</h1>
                 <h1 className={mixedTextClass}>+91 44444 99999</h1>
                 <h1 className={mixedTextClass}>xyz@gmail.com</h1>
               </div>
               <div>
-                <h1 className={mixedTextClass}>Online</h1>
+                <h1 className={`${mixedTextClass} font-medium text-md`}>Online</h1>
                 <h1 className={mixedTextClass}>Reach out to xyz</h1>
                 <h1 className={mixedTextClass}>+91 44444 99999</h1>
                 <h1 className={mixedTextClass}>xyz@gmail.com</h1>

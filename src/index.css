@@ -7,9 +7,16 @@
 
 
 
-body{
+/* body{
     font-family: "Bricolage Grotesque";
-}
+} */
+ @font-face {
+    font-family: poppin;
+    src: url(/public/Poppins-Regular.ttf);
+ }
+ body{
+    font-family: poppin;
+ }
 
 .border-animate::after {
     content: '';

@@ -9,6 +9,7 @@ import HeroParent from '../Components/Homecomp/HeroParent'
 import ImageSphare from '../Components/Homecomp/ImageSphare'
 import FullscreenNav from '../Components/common/FullscreenNav'
 import Video from '../Components/Homecomp/Video'
+import Hero from '../Components/Homecomp/Hero'
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       {/* <Loader3 /> */}
       <FullscreenNav />
       <HeroParent />
+      {/* <Hero /> */}
       <Pin />
       <ImageSphare />
       <Abouttext />

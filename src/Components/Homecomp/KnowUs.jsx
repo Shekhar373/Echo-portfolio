@@ -12,7 +12,7 @@ const KnowUs = () => {
     });
 
     const scrollTween = gsap.to(horiscroll.current, {
-      xPercent: -146,
+      xPercent: -150,
       scrollTrigger: {
         trigger: horiscroll.current,
         // markers: true,
@@ -43,7 +43,7 @@ const KnowUs = () => {
   return (
     <div
       ref={horiscroll}
-      className=" horizontal-text tracking-tight h-screen pl-[185vw]  whitespace-nowrap  flex justify-center items-center text-[13vw]"
+      className=" horizontal-text tracking-tight h-screen pl-[197vw]  whitespace-nowrap  flex justify-center items-center text-[13vw]"
     >
       <h1>Brands Don't Whisper They Echo</h1>
     </div>
