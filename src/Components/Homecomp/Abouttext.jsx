@@ -43,14 +43,14 @@ const AboutText = () => {
 
   return (
     <div
-      className="h-[80vh] w-full flex flex-col justify-center p-5 lg:p-10 lg:mt-[20vh]"
+      className="h-[90vh] w-full flex flex-col justify-center p-5 lg:p-10 lg:mt-[20vh]"
     >
       <div className="border-b pb-[10vh] lg:pb-[20vh] flex flex-col max-md:gap-10">
       <h1 className="text-[9vw] leading-[9vw] lg:text-[5vw] lg:leading-[5vw] tracking-tighter">
         I create visuals that <br /> communicate and<br /> <span className="text-zinc-400">inspire.</span>
       </h1>
 
-      <h1 className="text-xl lg:pl-[60vw]">
+      <h1 className="text-sm lg:text-xl lg:pl-[60vw]">
         I'm a Video Editor and Graphic Designer focused on creating engaging
         visual experiences. I combine storytelling, motion, design, and
         creativity to turn ideas into content that captures attention and leaves
