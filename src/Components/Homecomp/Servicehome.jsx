@@ -75,10 +75,10 @@ const Servicehome = () => {
                 alt=""
               />
             </div>
-            <div className="h-full w-full lg:w-3/4 text-[6vw] max-md:font-medium lg:text-[3vw] relative z-10 font-light flex">
+            <div className="h-full w-full lg:w-3/4 text-[7vw] max-md:font-medium lg:text-[3vw] relative z-10 font-light flex">
               <h1 className="">{service.heading}</h1>
             </div>
-            <div className="h-full w-full lg:w-1/4 max-md:text-sm font-medium relative z-10 flex items-center max-md:border-b max-md:pb-5">
+            <div className="h-full w-full lg:w-1/4 max-md:text-sm lg:font-medium relative z-10 flex items-center max-md:border-b max-md:pb-5">
               <h1 className="mix-blend-difference">{service.description}</h1>
             </div>
           </div>
