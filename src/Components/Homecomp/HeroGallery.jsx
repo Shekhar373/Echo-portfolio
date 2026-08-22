@@ -189,7 +189,7 @@ const HeroGallery = () => {
           overflow-hidden
           cursor-grab
           select-none
-          max-md:pt-[15vh]
+          max-md:mt-[15vh]
           flex
           ${isMobile ? 'flex-row items-center touch-pan-x' : 'flex-col items-center touch-pan-y'}
         `}
