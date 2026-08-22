@@ -57,12 +57,12 @@ const Pin = () => {
             </div>
             <div className='pin-color h-[80vh] lg:h-screen w-full relative top-[60vh] lg:top-[120vh]'>
 
-                <div className='pin-color-text text-[8vw] inline-block font-bold leading-[8vw] pt-16 p-5 lg:p-10 '>
+                <div className='pin-color-text text-[12vw] lg:text-[8vw] inline-block font-bold leading-[12vw] lg:leading-[8vw] pt-16 p-5 lg:p-10 '>
                     <h1 className='overflow-clip'>A NETWORK </h1>
                     <h1 className='overflow-clip'>DESIGNED</h1>
                     <h1 className='overflow-clip'>FOR</h1>
                 </div>
-                <div className='pin-color-text flex flex-col items-end absolute right-5 ;g"right-10 bottom-10 leading-[8vw] justify-end font-bold text-[8vw]' >
+                <div className='pin-color-text flex flex-col items-end absolute right-5 lg:right-10 bottom-10 leading-[12vw] lg:leading-[8vw] justify-end font-bold text-[12vw] lg:text-[8vw]' >
                     <h1 className='overflow-clip'>TODAY</h1>
                     <h1 className='overflow-clip'>AND</h1>
                     <h1 className='overflow-clip'>TOMORROW</h1>
