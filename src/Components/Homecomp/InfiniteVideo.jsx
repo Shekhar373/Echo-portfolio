@@ -8,6 +8,11 @@ const videos = [
   // "/hero_video.mp4",
 ]
 
+// const videos = [
+//   "/hero_video.mp4",
+//   "/hero_video.mp4",
+// ]
+
 const InfiniteVideo = () => {
   const containerRef = useRef(null);
   const trackRef = useRef(null);

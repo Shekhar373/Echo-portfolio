@@ -9,25 +9,13 @@ const AboutText = () => {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger, SplitText);
 
-    let split;
-
-    // Delay SplitText until next microtask to ensure layout is stable
-    setTimeout(() => {
-      if (!textref.current) return;
-
-      // Clean up previous splits if they exist (SplitText can break lines on hot reloads or remounts)
-      SplitText.killTweensOf && SplitText.killTweensOf(textref.current);
-
-      // Split lines of text
-      split = SplitText.create(textref.current, {
-        type: "lines",
-        mask:"lines"
-        // linesClass: "gsap-line", // add a class so CSS can keep overflow-hidden 
-      });
-
-      // Animate each line
-      gsap.from(split.lines, {
-        opacity: 0,
+    let split = SplitText.create(textref.current,{
+      type: "lines",
+      mask: "lines",
+      autoSplit: true,
+      onSplit: (split) => {
+        return gsap.from(split.lines, {
+          opacity: 0,
         yPercent: 120,
         ease: "power1.out",
         stagger: {
@@ -39,16 +27,55 @@ const AboutText = () => {
           start: "top 70%",
           toggleActions: "play none none reverse",
         },
-      });
-    }, 0);
-
-    // Cleanup: revert SplitText on unmount
-    return () => {
-      if (split && split.revert) {
-        split.revert();
-      }
-    };
+        });
+      },
+      onComplete: () => split.revert(),
+    });
   });
+
+  // useGSAP(() => {
+  //   gsap.registerPlugin(ScrollTrigger, SplitText);
+
+  //   let split;
+
+  //   // Delay SplitText until next microtask to ensure layout is stable
+  //   setTimeout(() => {
+  //     if (!textref.current) return;
+
+  //     // Clean up previous splits if they exist (SplitText can break lines on hot reloads or remounts)
+  //     SplitText.killTweensOf && SplitText.killTweensOf(textref.current);
+
+  //     // Split lines of text
+  //     split = SplitText.create(textref.current, {
+  //       type: "lines",
+  //       mask:"lines"
+  //       // linesClass: "gsap-line", // add a class so CSS can keep overflow-hidden 
+  //     });
+
+  //     // Animate each line
+  //     gsap.from(split.lines, {
+  //       opacity: 0,
+  //       yPercent: 120,
+  //       ease: "power1.out",
+  //       stagger: {
+  //         amount: 0.8,
+  //       },
+  //       scrollTrigger: {
+  //         trigger: textref.current,
+  //         // markers: true,
+  //         start: "top 70%",
+  //         toggleActions: "play none none reverse",
+  //       },
+  //     });
+  //   }, 0);
+
+  //   // Cleanup: revert SplitText on unmount
+  //   return () => {
+  //     if (split && split.revert) {
+  //       split.revert();
+  //     }
+  //   };
+  // });
   return (
     <div className="h-[90vh] w-full flex flex-col justify-center p-5 lg:p-10 lg:mt-[20vh]">
       <div

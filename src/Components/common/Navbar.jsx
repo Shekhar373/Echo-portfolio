@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className="text-xl">
         <h1>Echo Studio</h1>
       </div>
-      <div className="flex gap-2 cursor-pointer">
+      <div className="hidden lg:flex gap-2 cursor-pointer ">
         <div className="flex justify-center items-center gap-10 px-10 pt-3 border-none bg-[#F3F3F3] rounded-4xl">
           <h3 className="pb-3">WORK</h3>
           <h3 className="pb-3">SERVICES</h3>
@@ -14,7 +14,7 @@ const Navbar = () => {
         </div>
    
         <div>
-          <button className="px-10 py-3 border-none bg-[#C9FE6E] cursor-pointer rounded-4xl">Contact</button>
+          <button className="px-7 py-3 border-none bg-[#C9FE6E] cursor-pointer rounded-4xl">Contact</button>
         </div>
       </div>
     </div>
