@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div className="h-screen w-full bg-white relative ">
       <div className="h-screen w-full absolute top-15 lg:top-0 lg:flex justify-between lg:items-center p-5 text-[10vw] max-md:leading-[11vw] lg:text-[3vw]">
-        <div className="lg:tracking-tighter flex flex-col lg:flex-row lg: gap-2 max-md:font-bold">
+        <div className="lg:tracking-tighter text-[10vw] max-md:leading-[11vw] flex flex-col lg:flex-row lg:gap-2">
           <h1>Creative</h1>
           <h1>Videos</h1>
         </div>
@@ -14,8 +14,8 @@ const Hero = () => {
           made with care
         </h1>
       </div>
-      <div className="h-fit w-full absolute max-md:top-60 lg:bottom-0 flex justify-between items-center p-5">
-        <h1 className="font-medium max-md:text-xl">
+      <div className="h-fit w-full absolute max-md:top-[25%] lg:bottom-0 flex justify-between items-center p-5">
+        <h1 className="font-medium">
           Where creative editing meets bold design{" "}
           <span className="hidden md:inline">
             <br />
@@ -27,7 +27,7 @@ const Hero = () => {
         </h1>
       </div>
 
-      <div className="absolute bottom-67 p-5">
+      <div className="absolute bottom-[28%] p-5">
         <h1 className="text-zinc-500 lg:hidden flex">
           Drag to explore the collection
         </h1>
