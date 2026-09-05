@@ -5,11 +5,11 @@
     color: rgb(255, 255, 255);
 }
 
-
-
-/* body{
-    font-family: "Bricolage Grotesque";
+/* 
+*{
+    outline: red 2px solid;
 } */
+
  @font-face {
     font-family: poppin;
     src: url(/public/Poppins-Regular.ttf);

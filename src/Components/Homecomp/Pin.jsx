@@ -35,7 +35,7 @@ const Pin = () => {
                 scaleX: 0.25,
                 scaleY: 0.25,
                 y: "90vh",
-                x: "35vw",
+                x: "34vw",
                 scrollTrigger: {
                     trigger: ".pin-main",
                     // marker:true,
@@ -51,7 +51,7 @@ const Pin = () => {
 
     return (
 
-        <div className='pin-main h-[150vh] lg:h-[260vh] bg-black text-white w-full relative '>
+        <div className='pin-main h-[150vh] lg:h-[230vh] bg-black text-white w-full relative'>
             <div className='absolute z-30 w-full flex justify-center items-center'>
                 <video ref={mainvideo} className='h-[50vh] lg:h-screen w-screen object-cover' autoPlay loop muted src="https://wethinkelastic.com/assets/videos/video-start.mp4#t=0.1"></video>
             </div>

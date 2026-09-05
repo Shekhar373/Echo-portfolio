@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="h-full w-1/2 bg-black" />
 
       <div className="absolute top-0 h-full w-full px-5 lg:px-10 flex flex-col gap-15 max-md:pt-5">
-        <div className="text-[10vw]">
+        <div className="text-[10vw] lg:pt-[10vh]">
           <h1 className={mixedTextClass}>Let's get in touch</h1>
         </div>
         <div className=" h-fit lg:h-[60vh] w-full flex justify-between ">

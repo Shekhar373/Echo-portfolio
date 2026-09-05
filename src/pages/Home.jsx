@@ -11,6 +11,7 @@ import FullscreenNav from '../Components/common/FullscreenNav'
 import Video from '../Components/Homecomp/Video'
 import Hero from '../Components/Homecomp/Hero'
 import Navbar from '../Components/common/Navbar'
+import Cubes from '../Components/Homecomp/Cubes'
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
       {/* <HeroParent /> */}
       <Hero />
       <Pin />
+      <Cubes />
       <ImageSphare />
       <Abouttext />
       <Video />

@@ -27,25 +27,9 @@ const ImageSphare = () => {
   const colorRef = useRef(null)
   const isDesktop = useIsDesktop();
 
-  // useGSAP(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
-
-  //   gsap.matchMedia().add("(min-width: 768px)", () => {
-  //     gsap.to(colorRef.current, {
-  //       backgroundColor: "white",
-  //       scrollTrigger: {
-  //         trigger: colorRef.current,
-  //         markers:true,
-  //         start: "top top",
-   
-  //       },
-  //     });
-  //   });
-  // });
-
   return (
-    <div ref={colorRef} className="h-fit lg:h-[170vh] flex flex-col max-md:gap-10">
-      <div className=" lg:pt-[40vh] p-5 lg:p-10">
+    <div ref={colorRef} className="h-fit lg:h-[150vh] flex flex-col max-md:gap-10">
+      <div className="p-5 lg:p-10">
         <h1 className="text-[12vw] lg:text-[6vw] tracking-tighter">Projects</h1>
       </div>
       <div className="h-[50vh] lg:h-screen w-full">

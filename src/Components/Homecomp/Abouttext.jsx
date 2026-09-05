@@ -36,7 +36,7 @@ const AboutText = () => {
   });
 
   return (
-    <div className="h-[90vh] w-full flex flex-col justify-center p-5 lg:p-10 lg:mt-[20vh]">
+    <div className="h-[90vh] w-full flex flex-col justify-center p-5 lg:p-10">
       <div
         ref={textref}
         className="border-b pb-[10vh] lg:pb-[20vh] flex flex-col max-md:gap-10"
